@@ -18,13 +18,13 @@ namespace AdventOfCode24
             var difference = 0;
             var listA = new List<int>();
             var listB = new List<int>();
-
-
-            if (listA.Count != listB.Count)
+            
+            for (int i = 0; i < strings.Length; i += 2)
             {
-                Console.WriteLine("Error, lists not the same size.");
-                return;
+                listA.Add(int.Parse(strings[i]));
+                listB.Add(int.Parse(strings[i+1]));
             }
+            
             var sortedA = listA.OrderBy(x => x).ToArray();
             var sortedB = listB.OrderBy(x => x).ToArray();
 
